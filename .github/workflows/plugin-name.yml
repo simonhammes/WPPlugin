@@ -48,13 +48,17 @@ jobs:
 
             -   name: Validate composer.json and composer.lock
                 working-directory: ${{ env.wp-plugins-directory }}
-                run: composer validate
+                run: |
+                    composer update
+                    composer validate
 
             -   name: Install dependencies
                 working-directory: ${{ env.wp-plugins-directory }}
                 run: |
                     composer install
                     composer require lucatume/wp-browser:^3 --dev
+                    composer update codeception/codeception
+                    composer require phpunit/phpunit:^9 --dev
                     composer scoper
                     composer dumpautoload
                     npm install
