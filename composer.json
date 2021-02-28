@@ -8,11 +8,6 @@
 			"email": "i@wp-punk.com"
 		}
 	],
-	"config": {
-		"platform": {
-			"php": "7.2.5"
-		}
-	},
 	"require": {
 		"rdlowrey/auryn": "^1.4"
 	},
